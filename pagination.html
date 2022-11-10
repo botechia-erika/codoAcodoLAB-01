@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paginnation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .list {
+
+      display: flex;
+      flex-flow: column wrap;
+      margin-left: 82px;
+      margin-left: 30px;
+      list-style-type: none;
+      box-shadow: rgba(0, 0, 0, 0.25) 12px 12px 16px 0px, rgba(255, 255, 255, 0.3) -8px -8px 12px 0px;
+      background-color: rgb(213, 248, 255);
+      border-radius: 15px;
+      min-height: 50vh;
+      width: 100%;
+      max-width: 1440px;
+
+    }
+
+    .item {
+      display: flex;
+      width: 30%;
+      min-width: 300px;
+      background: gold;
+      height: 100%;
+      min-height: 10vh;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header__page">
+    <img alt="logo marca del site" src="./assets/images/logo/icon-api-01.png" class="img__logoBrand" />
+
+    <nav class="nav__page">
+      <ul class="nav__list">
+        <li class="li__navlist active"><a class="anchor__navlist active" href="#">HOME</a></li>
+
+        <li class="li__navlist"><a class="anchor__navlist " href="/recursos-front-end.html">RECURSOS</a></li>
+        <li class="li__navlist"><a class="anchor__navlist " href="/snippets.html">SNIPPETS</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/login.html">LOGIN</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/cadastro.html">CADASTRO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <main class="banner">
+
+    <div class="pageReferences">
+
+
+      <h1 class="banner__titulo"> Hola Mundo!</h1>
+
+      <div class="div__pageReferences">
+        <ul class="footer__listAnchor"><a href="/#nosotras">NOSOTRAS</a></li>
+          <li class="anchor__footerList"><a href="/#projecto">EL PROJECTO</a></li>
+          <li class="anchor__footerList"><a href="/#github">GITHUB</a></li>
+        </ul>
+      </div>
+
+      <h2 class="pageReferences__titulo">Nuestros TIPS sobre FRONTEND BASICO</h2>
+      <div class="pageReferences__descricao">
+        <p class="pageReferences__descricao">Si tambien sos parte de <strong><br />CODO A CODO 4.0<br /></strong>
+          o
+          si
+          <strong><br />SOS
+            ENTUSIASTA del DESAROLLO WEB<br /></strong> o
+          si</strong> no perca tiempo en construir nuestra comunidade!
+        </p>
+        <p class="pageReferences__cadastro"> <strong>HAGA TU <a class="card__botao ">CADASTRO</a> y PARTICIPE!!
+          </strong>
+        </p>
+
+        </article>
+
+      </div>
+    </div>
+
+  </main>
+  <div class="pagenumbers" id="pagination"></div>
+  </div>
+
+  <script>
+    class Animal {
+      constructor(nombreAnimal, descripcion) {
+        this.nombreAnimal = nombreAnimal;
+        this.descripcion = descripcion;
+      }
+      //methods get y set para alterar class
+      get nombreAnimal() {
+        return this._nombreAnimal;
+      }
+      set nombreAnimal(nombreAnimal) {
+        this._nombreAnimal = nombreAnimal;
+      }
+      get descripcion() {
+        return this._descripcion;
+      }
+      set descripcion(descripcion) {
+        return this._descripcion = descripcion;
+      }
+    }
+    let item1 = new Animal(`Kiki`, 'dulce amable y tierna')
+    console.log(item1)
+    let item2 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+    console.log(item2)
+    item3 = new Animal('Kiki', 'dulce amable y tierna');
+    item4 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+    item5 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+    item6 = new Animal('Kiki', 'dulce amable y tierna');
+    item7 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+    item8 = new Animal('Kiki', 'dulce amable y tierna');
+    item9 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+    item10 = new Animal('Kiki', 'dulce amable y tierna');
+    item11 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+    item12 = new Animal('Kiki', 'dulce amable y tierna');
+    const list_items = [
+      item1._nombreAnimal + " " + item1.descripcion,
+      item2.nombreAnimal,
+      "Item 3",
+      "Item 4",
+      "Item 5",
+      "Item 6",
+      "Item 7",
+      "Item 8",
+      "Item 9",
+      "Item 10",
+      "Item 11",
+      "Item 12",
+    ];;
+    os
+    const list_element = document.getElementById('list');
+    const pagination_element = document.getElementById('pagination');
+
+    let current_page = 1;
+    let rows = 3;
+
+    function DisplayList(items, wrapper, rows_per_page, page) {
+      wrapper.innerHTML = "";
+      page--;
+
+      let start = rows_per_page * page;
+      let end = start + rows_per_page;
+      let paginatedItems = items.slice(start, end);
+
+      for (let i = 0; i < paginatedItems.length; i++) {
+        let item = paginatedItems[i];
+
+        let item_element = document.createElement('div');
+        item_element.classList.add('item');
+        item_element.innerText = item,
+          wrapper.appendChild(item_element);
+      }
+    }
+
+    function SetupPagination(items, wrapper, rows_per_page) {
+      wrapper.innerHTML = "";
+
+      let page_count = Math.ceil(items.length / rows_per_page);
+      for (let i = 1; i < page_count + 1; i++) {
+        let btn = PaginationButton(i, items);
+        wrapper.appendChild(btn);
+      }
+    }
+
+    function PaginationButton(page, items) {
+      let button = document.createElement('button');
+      button.innerText = page;
+
+      if (current_page == page) button.classList.add('active');
+
+      button.addEventListener('click', function () {
+        current_page = page;
+        DisplayList(items, list_element, rows, current_page);
+
+        let current_btn = document.querySelector('.pagenumbers button.active');
+        current_btn.classList.remove('active');
+
+        button.classList.add('active');
+      });
+
+      return button;
+    }
+
+    DisplayList(list_items, list_element, rows, current_page);
+    SetupPagination(list_items, pagination_element, rows);
+  </script>
+</body>
+
+</html>

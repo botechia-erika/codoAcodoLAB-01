@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Recursos Front End</title>
+</head>
+
+<body>
+  <header class="header__page">
+    <img alt="logo marca del site" src="/assets/images/logo/icon-api-01.png" class="img__logoBrand" />
+
+    <nav class="nav__page">
+      <ul class="nav__list">
+        <li class="li__navlist"><a class="anchor__navlist" href="/index.html">HOME</a></li>
+
+        <li class="li__navlist active"><a class="anchor__navlist " href="#">RECURSOS</a></li>
+        <li class="li__navlist"><a class="anchor__navlist " href="/snippets.html">SNIPPETS</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/login.html">LOGIN</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/cadastro.html">CADASTRO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="container" id="formContainer">
+    <main class="main_formContainer">
+
+      <form action="" method="GET">
+        <label for="primerNombre_Usuario">Nombre de Pila: </label>
+        <input type="text" for="realUser" id="primerNombre_Usuario" placeholder="Pepe Suarez">
+        <!-- FOR = ES PARA -- label es para este input -->
+
+        <label for="apellido_Usuario">Apellido </label>
+        <input type="text" name="apellido_Usuario" id="apellido_Usuario">
+
+        <!-- NUMBER -->
+
+        <label for="edadUsuario"> Ingrese su EDAD</label>
+        <input type="number" name="edadUser" id="edadUser" min="18" max="120" maxlength="3" value="18">
+
+
+        <!-- EMAIL -->
+        <p>
+          <label for="emailUser">E-mail</label>
+          <input type="email" name="emailUser" id="emailUser" minlength="9" maxlength="250" pattern=".+@.+\.com">
+
+
+        </p>
+        <!-- fecha -->
+
+        <label class="dateBirth">Fecha Cumple </label>
+        <input type="date" name="dateBirth" id="dateBirth">
+
+
+        <!-- PASSWORD -->
+        <p>
+          <label for="passwordUser">Contrasena</label>
+          <input type="password" name="passwordUser"
+            pattern="[(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$]" id="passwordUser"
+            minlength="5" maxlength="8" size="8" required="">
+        </p>
+        <!-- size = tamano visual minlenght=numero minimo de caracteres maxlenght = numero maximo caracteres -->
+        <!-- pattern usa expresiones regulares tipo de conjunto de caracteres que acepta -->
+
+        <!-- file -->
+        <!-- <label>Archivo
+        <input type="file" name="fileUser" id="fileUser">
+        </label> -->
+        <label>COLOR PICKER
+          <input type="color" name="colorForUser" id="colorForUser">
+
+        </label>
+
+        <fieldset>
+          <legend>CHECK SELECT</legend>
+          <label for="opt1">
+
+            <input type="checkbox" name="opt1" value="check01"> CHECK #01
+          </label>
+          <label for="opt1">
+            <input type="checkbox" name="opt1" value="check02"> CHECK #02
+          </label>
+          <label for="opt1">
+            <input type="checkbox" name="opt1" value="check03"> CHECK #03
+
+          </label>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>CHECK OPTIONS</legend>
+          <label for="opt1">
+            <input type="checkbox" name="opt1" value="check01"> CHECK #01
+          </label>
+          <label for="opt1">
+            <input type="checkbox" name="opt1" value="check02"> CHECK #02
+          </label>
+          <label for="opt1">
+            <input type="checkbox" name="opt1" value="check03"> CHECK #03
+          </label>
+        </fieldset>
+        <button type="submit">Enviar datos</button>
+
+      </form>
+
+ 
+       
+            <div class="container">
+          
+              
+                  <div class="title-header">
+                      <h1>ASIDE</h1>
+                    
+                                  </div>
+                                </main>
+      
+
+              <aside>
+      <article>
+        <img class="header__imgEditor" id="editorJSimg" alt="logo editor img HTML" src="/assets/images/icons/editor03_js.png" />
+    </article>
+    <article>
+      <img class="header__imgEditor" id="editorJSimg" alt="logo editor img HTML" src="/assets/images/icons/editor03_js.png" />
+    </article>
+    <article>
+      <img class="header__imgEditor" id="editorJSimg" alt="logo editor img HTML" src="/assets/images/icons/editor03_js.png" />
+    </article>
+    <article>
+      <img class="header__imgEditor" id="editorJSimg" alt="logo editor img HTML" src="/assets/images/icons/editor03_js.png" />
+    </article>
+  </div></aside></main>
+        
+</div>
+
+</html>
+

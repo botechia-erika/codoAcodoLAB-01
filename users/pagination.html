@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:100,300,400,500,700,900" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <title>HOME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+
+  <link href="../assets/css/style.css" rel="stylesheet" />
+
+  <title>Paginnation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .alumnoNombre {
+      background-color: yellow;
+      height: 50px;
+      font-size: 2rem;
+      color: cornflowerblue;
+      border-radius: 15px;
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    .specialInfo {
+      color: red;
+      font-weight: 800;
+    }
+
+
+    .card01 a {
+      background-color: aquamarine;
+      font-size: 1rem;
+      line-height: 2rem;
+      padding-bottom: 1rem;
+      color: green;
+      border-radius: 15px;
+      padding: 0.3rem;
+    }
+
+    .imgAlumno {
+      width: 70%;
+      height: 54%;
+      margin-left: 15%;
+      background-color: aliceblue;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .list {
+
+      display: flex;
+      flex-flow: column wrap;
+      margin-left: 82px;
+      margin-left: 30px;
+      list-style-type: none;
+      box-shadow: rgba(0, 0, 0, 0.25) 12px 12px 16px 0px, rgba(255, 255, 255, 0.3) -8px -8px 12px 0px;
+      background-color: rgb(213, 248, 255);
+      border-radius: 15px;
+      min-height: 50vh;
+      width: 100%;
+      max-width: 1440px;
+
+    }
+
+    .item {
+      display: flex;
+      width: 100%;
+      min-width: 300px;
+      background: gold;
+      height: 100%;
+      min-height: 10vh;
+      margin: 30px auto;
+      ;
+
+    }
+
+
+    .pagenumbers {
+      display: flex;
+      flex-flow: row wrap;
+      width: 90%;
+      height: 90%;
+      max-width: 1440px;
+      max-height: 90px;
+      background-color: bisque;
+      justify-content: space-around;
+
+
+    }
+
+    .item {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      height: 100%;
+      max-width: 1200px;
+      background-color: coral;
+      min-height: 500px;
+      max-width: 520;
+      margin-bottom: 90px;
+      justify-content: center;
+      align-items: space-around;
+      padding: 2rem;
+
+    }
+
+    .card01 {
+      height: 400px;
+      margin: 30px auto;
+      align-self: center;
+      padding-bottom: 30px;
+      margin: 30px auto;
+      background-color: bisque;
+      min-width: 300px;
+      box-shadow: 5px 5px 0.5 rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      padding: 2rem;
+    }
+
+    button {
+      display: inline-block;
+      width: 30px;
+      height: 45px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header__page">
+    <img alt="logo marca del site" src="./assets/images/logo/icon-api-01.png" class="img__logoBrand" />
+
+    <nav class="nav__page">
+      <ul class="nav__list">
+        <li class="li__navlist active"><a class="anchor__navlist active" href="/">HOME</a></li>
+
+        <li class="li__navlist"><a class="anchor__navlist " href="/livePreview.html">RECURSOS</a></li>
+        <li class="li__navlist"><a class="anchor__navlist " href="/snippets.html">SNIPPETS</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/users/login.html">LOGIN</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/users/pagination.html">CADASTRO</a></li>
+        <li class="li__navlist"><a class="anchor__navlist" href="/users/register.html">CADASTRO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <main class="banner">
+
+    <div class="pageReferences">
+
+
+      <h1 class="banner__titulo"> Hola Mundo!</h1>
+
+      <div class="div__pageReferences">
+        <ul class="footer__listAnchor"><a href="/#nosotras">NOSOTRAS</a></li>
+          <li class="anchor__footerList"><a href="/#projecto">EL PROJECTO</a></li>
+          <li class="anchor__footerList"><a href="/#github">GITHUB</a></li>
+        </ul>
+      </div>
+
+      <h2 class="pageReferences__titulo">Nuestros TIPS sobre FRONTEND BASICO</h2>
+      <div class="pageReferences__descricao">
+        <p class="pageReferences__descricao">Si tambien sos parte de <strong><br />CODO A CODO 4.0<br /></strong>
+          o
+          si
+          <strong><br />SOS
+            ENTUSIASTA del DESAROLLO WEB<br /></strong> o
+          si</strong> no perca tiempo en construir nuestra comunidade!
+        </p>
+        <p class="pageReferences__cadastro"> <strong>HAGA TU <a class="card__botao ">CADASTRO</a> y PARTICIPE!!
+          </strong>
+        </p>
+
+        </article>
+
+      </div>
+    </div>
+
+  </main>
+  <section>
+    <h1>Users</h1>
+  </section>
+  <div class="list1">
+    <ul>
+
+      <li class="item" id="list"></li>
+
+    </ul>
+
+  </div>
+  <div class="pagenumbers" id="pagination"></div>
+  </div>
+
+  <script>
+    class Animal {
+      constructor(nombreAnimal, descripcion) {
+        this.nombreAnimal = nombreAnimal;
+        this.descripcion = descripcion;
+      }
+      //methods get y set para alterar class
+      get nombreAnimal() {
+        return this._nombreAnimal;
+      }
+      set nombreAnimal(nombreAnimal) {
+        this._nombreAnimal = nombreAnimal;
+      }
+      get descripcion() {
+        return this._descripcion;
+      }
+      set descripcion(descripcion) {
+        return this._descripcion = descripcion;
+      }
+    }
+    /*   let item1 = new Animal(`Kiki`, 'dulce amable y tierna')
+      console.log(item1)
+      let item2 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+      console.log(item2)
+      item3 = new Animal('Kiki', 'dulce amable y tierna');
+      item4 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+      item5 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+      item6 = new Animal('Kiki', 'dulce amable y tierna');
+      item7 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+      item8 = new Animal('Kiki', 'dulce amable y tierna');
+      item9 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+      item10 = new Animal('Kiki', 'dulce amable y tierna');
+      item11 = new Animal('Thor', 'Jugueton amable defensor de quien lo cuida');
+      item12 = new Animal('Kiki', 'dulce amable y tierna'); */
+    const list_items = [{
+      alumnoNombre: "Yuri Kidd",
+      alumnoEmail: "ultricies@outlook.net",
+      edad: 88,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 1,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Carson Sandoval",
+      alumnoEmail: "nunc@yahoo.org",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 2,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Chantale Strickland",
+      alumnoEmail: "erat.vivamus@aol.net",
+      edad: 64,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 3,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Giacomo Ferrell",
+      alumnoEmail: "ornare.elit.elit@google.com",
+      edad: 74,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 4,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Keelie Mann",
+      alumnoEmail: "fermentum.arcu@hotmail.edu",
+      edad: 23,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 5,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Charissa Cain",
+      alumnoEmail: "ut.ipsum.ac@protonmail.net",
+      edad: 41,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 6,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Adrienne Mcguire",
+      alumnoEmail: "non.vestibulum.nec@hotmail.net",
+      edad: 68,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 7,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Jillian Guthrie",
+      alumnoEmail: "in@yahoo.ca",
+      edad: 24,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 8,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Kaitlin Carrillo",
+      alumnoEmail: "ipsum.cursus@google.org",
+      edad: 43,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 9,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Roanna Mckee",
+      alumnoEmail: "amet@icloud.org",
+      edad: 74,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 10,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Ciaran David",
+      alumnoEmail: "ac.nulla@outlook.net",
+      edad: 50,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 11,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Madeline Cleveland",
+      alumnoEmail: "aenean@icloud.org",
+      edad: 75,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 12,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Juliet Patel",
+      alumnoEmail: "turpis@hotmail.couk",
+      edad: 39,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 13,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Aretha Anderson",
+      alumnoEmail: "tempor@outlook.edu",
+      edad: 62,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 14,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Hiroko Montoya",
+      alumnoEmail: "cursus.in@aol.couk",
+      edad: 27,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 15,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Bell Mack",
+      alumnoEmail: "nunc.ullamcorper@hotmail.ca",
+      edad: 60,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 16,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Ulysses Fowler",
+      alumnoEmail: "sed.est@protonmail.org",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 17,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Judah Padilla",
+      alumnoEmail: "euismod.mauris@yahoo.ca",
+      edad: 75,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 18,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Demetria Hewitt",
+      alumnoEmail: "dolor.donec@icloud.edu",
+      edad: 62,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 19,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Isaiah Reid",
+      alumnoEmail: "nisi.magna@yahoo.com",
+      edad: 85,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 20,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Barrett Baker",
+      alumnoEmail: "eget.ipsum.donec@protonmail.com",
+      edad: 63,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 21,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Victoria Marks",
+      alumnoEmail: "convallis.est@google.ca",
+      edad: 60,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 22,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Lenore Browning",
+      alumnoEmail: "non.cursus@aol.org",
+      edad: 46,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 23,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Hanae Young",
+      alumnoEmail: "varius.nam@outlook.couk",
+      edad: 49,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 24,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Caesar Cooley",
+      alumnoEmail: "dui@outlook.org",
+      edad: 80,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 25,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Jaime Ewing",
+      alumnoEmail: "magna.ut@icloud.couk",
+      edad: 58,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 26,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Malachi Wynn",
+      alumnoEmail: "est.mollis.non@icloud.com",
+      edad: 84,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 27,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Neil Flynn",
+      alumnoEmail: "rutrum.fusce.dolor@hotmail.ca",
+      edad: 89,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 28,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Kitra Roberts",
+      alumnoEmail: "luctus@aol.ca",
+      edad: 69,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 29,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Steel Bolton",
+      alumnoEmail: "donec.at@outlook.org",
+      edad: 80,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 30,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Chaim Horn",
+      alumnoEmail: "etiam.vestibulum.massa@outlook.edu",
+      edad: 69,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 31,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Berk Serrano",
+      alumnoEmail: "accumsan.sed@outlook.couk",
+      edad: 48,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 32,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Keegan Maddox",
+      alumnoEmail: "quis@outlook.edu",
+      edad: 52,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 33,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Zenaida Barrera",
+      alumnoEmail: "aliquet.sem@protonmail.couk",
+      edad: 90,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 34,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Buckminster Callahan",
+      alumnoEmail: "lacus@google.couk",
+      edad: 78,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 35,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Hasad Berger",
+      alumnoEmail: "bibendum.ullamcorper@outlook.net",
+      edad: 31,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 36,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Imogene Beard",
+      alumnoEmail: "nisi.a@google.couk",
+      edad: 49,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 37,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Mark Black",
+      alumnoEmail: "consectetuer.mauris@hotmail.ca",
+      edad: 39,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 38,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Cassandra Booker",
+      alumnoEmail: "metus.vivamus@icloud.edu",
+      edad: 62,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 39,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Hasad Bauer",
+      alumnoEmail: "est@yahoo.org",
+      edad: 22,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 40,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Mariam Phelps",
+      alumnoEmail: "phasellus.at@aol.com",
+      edad: 32,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 41,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Amaya Lott",
+      alumnoEmail: "egestas.ligula@hotmail.couk",
+      edad: 76,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 42,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Jordan Fox",
+      alumnoEmail: "id.blandit@protonmail.com",
+      edad: 43,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 43,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Piper Chen",
+      alumnoEmail: "nulla.facilisis@hotmail.org",
+      edad: 34,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 44,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Joelle Hyde",
+      alumnoEmail: "mollis.vitae.posuere@outlook.couk",
+      edad: 55,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 45,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Hakeem Hogan",
+      alumnoEmail: "dapibus.quam@icloud.com",
+      edad: 74,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 46,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Keegan Pace",
+      alumnoEmail: "nullam.ut@icloud.ca",
+      edad: 44,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 47,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Walter Frazier",
+      alumnoEmail: "eu.ultrices.sit@outlook.com",
+      edad: 62,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 48,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Damon Burch",
+      alumnoEmail: "aliquam.gravida.mauris@aol.couk",
+      edad: 72,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 49,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Azalia Giles",
+      alumnoEmail: "dictum.augue@icloud.edu",
+      edad: 29,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 50,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Zachery Alvarez",
+      alumnoEmail: "magna@google.edu",
+      edad: 28,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 51,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Callum Frazier",
+      alumnoEmail: "enim@icloud.com",
+      edad: 29,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 52,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Elliott Kelly",
+      alumnoEmail: "cum.sociis@google.com",
+      edad: 26,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 53,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Halla Andrews",
+      alumnoEmail: "nascetur.ridiculus@protonmail.com",
+      edad: 64,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 54,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Xyla Barker",
+      alumnoEmail: "pellentesque.sed.dictum@yahoo.edu",
+      edad: 36,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 55,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Melissa Rowland",
+      alumnoEmail: "ante.ipsum@hotmail.org",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 56,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Price Mccullough",
+      alumnoEmail: "tincidunt.nibh.phasellus@aol.net",
+      edad: 58,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 57,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Shelly Pollard",
+      alumnoEmail: "odio.vel@aol.ca",
+      edad: 37,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 58,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Damon Barton",
+      alumnoEmail: "proin.vel@protonmail.edu",
+      edad: 63,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 59,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Shelby Hahn",
+      alumnoEmail: "ut.lacus@hotmail.edu",
+      edad: 39,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 60,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Garrett Mccullough",
+      alumnoEmail: "blandit.mattis@icloud.couk",
+      edad: 84,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 61,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Fitzgerald Chan",
+      alumnoEmail: "vestibulum.nec@aol.ca",
+      edad: 46,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 62,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Yoko Weber",
+      alumnoEmail: "eu.placerat@protonmail.edu",
+      edad: 41,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 63,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Richard Harris",
+      alumnoEmail: "quis.turpis.vitae@protonmail.org",
+      edad: 85,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 64,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Erich Summers",
+      alumnoEmail: "nunc.id@aol.org",
+      edad: 30,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 65,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Yardley Odom",
+      alumnoEmail: "nunc.ac@yahoo.ca",
+      edad: 57,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 66,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Indigo Anderson",
+      alumnoEmail: "luctus.et.ultrices@yahoo.edu",
+      edad: 44,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 67,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Steel Blackburn",
+      alumnoEmail: "dolor.donec@protonmail.ca",
+      edad: 85,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 68,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Emily Schultz",
+      alumnoEmail: "dolor.quisque@outlook.edu",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 69,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Reed Rivas",
+      alumnoEmail: "ipsum.dolor.sit@icloud.org",
+      edad: 38,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 70,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Tiger Marquez",
+      alumnoEmail: "ornare.sagittis@icloud.net",
+      edad: 62,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 71,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Savannah Hood",
+      alumnoEmail: "integer.mollis@hotmail.net",
+      edad: 48,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 72,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Rachel Horton",
+      alumnoEmail: "consectetuer.adipiscing@hotmail.edu",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 73,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Ora Gould",
+      alumnoEmail: "metus.aliquam.erat@icloud.net",
+      edad: 21,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 74,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Harrison Meyer",
+      alumnoEmail: "duis@google.ca",
+      edad: 56,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 75,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Olga Perez",
+      alumnoEmail: "malesuada.fames.ac@hotmail.net",
+      edad: 24,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 76,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Stephen Chase",
+      alumnoEmail: "sit.amet@aol.ca",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 77,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Jackson Watson",
+      alumnoEmail: "diam.sed.diam@outlook.com",
+      edad: 60,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 78,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Keane Rogers",
+      alumnoEmail: "congue.elit.sed@protonmail.org",
+      edad: 88,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 79,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Hiroko Bright",
+      alumnoEmail: "dictum.phasellus@icloud.couk",
+      edad: 18,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 80,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Nadine Berg",
+      alumnoEmail: "lectus.pede@yahoo.org",
+      edad: 29,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 81,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Illana Bishop",
+      alumnoEmail: "luctus.felis@google.com",
+      edad: 81,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 82,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Carolyn Baxter",
+      alumnoEmail: "proin.nisl.sem@aol.net",
+      edad: 57,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 83,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Brenda Martinez",
+      alumnoEmail: "et@hotmail.edu",
+      edad: 55,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 84,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Ciara Rush",
+      alumnoEmail: "purus@google.com",
+      edad: 83,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 85,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Troy Koch",
+      alumnoEmail: "lorem.ipsum.sodales@outlook.ca",
+      edad: 81,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 86,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Sean Robinson",
+      alumnoEmail: "porttitor@aol.couk",
+      edad: 29,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 87,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "TaShya Crawford",
+      alumnoEmail: "lorem.fringilla@yahoo.couk",
+      edad: 40,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 88,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Cameron Gay",
+      alumnoEmail: "magna.malesuada@icloud.couk",
+      edad: 33,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 89,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Rylee Cooke",
+      alumnoEmail: "nisi.magna@protonmail.org",
+      edad: 26,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 90,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Jaden Lynch",
+      alumnoEmail: "praesent.eu.dui@icloud.couk",
+      edad: 32,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 91,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Renee Chan",
+      alumnoEmail: "volutpat.nulla.facilisis@yahoo.org",
+      edad: 70,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 92,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Ishmael Wade",
+      alumnoEmail: "sit.amet@yahoo.couk",
+      edad: 26,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 93,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Sandra Orr",
+      alumnoEmail: "ac@hotmail.couk",
+      edad: 51,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 94,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Bryar Pugh",
+      alumnoEmail: "commodo.hendrerit@aol.com",
+      edad: 80,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 95,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Keaton Cross",
+      alumnoEmail: "libero.est@icloud.ca",
+      edad: 35,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 96,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Ivana Garrison",
+      alumnoEmail: "nunc.in@protonmail.net",
+      edad: 57,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 97,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Jesse Navarro",
+      alumnoEmail: "id.libero@aol.edu",
+      edad: 59,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 98,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Avram Wells",
+      alumnoEmail: "neque.sed@protonmail.edu",
+      edad: 64,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 99,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }, {
+      alumnoNombre: "Kirsten Raymond",
+      alumnoEmail: "felis.donec.tempor@google.couk",
+      edad: 19,
+      cursoActual: "fullstackPhyron_codoAcodo4",
+      numeroAlumno: 100,
+      imgAlumno: "../assets/images/icons/user-type-01.png"
+    }]
+    const list_element = document.getElementById('list');
+    const pagination_element = document.getElementById('pagination');
+
+    let current_page = 1;
+    let rows = 12;
+
+
+    function DisplayList(items, wrapper, rows_per_page, page) {
+      wrapper.innerHTML = "";
+      page--;
+
+      let start = rows_per_page * page;
+      let end = start + rows_per_page;
+      let paginatedItems = items.slice(start, end);
+
+      for (let i = 0; i < paginatedItems.length; i++) {
+        let item = paginatedItems[i];
+
+        let item_element = document.createElement('div');
+        item_element.classList.add('card01');
+        item_element.innerHTML = `<h3 class="alumnoNombre">${item.alumnoNombre}</h3>
+        <hr class="hr2">
+        <img src="${item.imgAlumno}" class="imgAlumno" alt="img alumno ${item.alumnoNombre}"/>
+        <ul class="infoAlumno" datalist="${item.numeroAlumno}"">
+          <li>idAlumno: ${item.numeroAlumno}</li>
+          <li>Curso Actual: ${item.cursoActual}</li>
+          <li class="specialInfo">EDAD: ${item.edad}</li>
+          <li>Email Alumno: <a href="mailto:${item.alumnoEmail}">${item.alumnoEmail}</a></li>
+<ul>
+        
+        `
+
+
+          ,
+          wrapper.appendChild(item_element);
+      }
+    }
+
+    function SetupPagination(items, wrapper, rows_per_page) {
+      wrapper.innerHTML = "";
+
+      let page_count = Math.ceil(items.length / rows_per_page);
+      for (let i = 1; i < page_count + 1; i++) {
+        let btn = PaginationButton(i, items);
+        wrapper.appendChild(btn);
+      }
+    }
+
+    function PaginationButton(page, items) {
+      let button = document.createElement('button');
+      button.innerText = page;
+
+      if (current_page == page) button.classList.add('active');
+
+      button.addEventListener('click', function () {
+        current_page = page;
+        DisplayList(items, list_element, rows, current_page);
+
+        let current_btn = document.querySelector('.pagenumbers button.active');
+        current_btn.classList.remove('active');
+
+        button.classList.add('active');
+      });
+
+      return button;
+    }
+
+    DisplayList(list_items, list_element, rows, current_page);
+    SetupPagination(list_items, pagination_element, rows);
+  </script>
+</body>
+
+</html>

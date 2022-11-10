@@ -1,0 +1,14 @@
+<style>
+@import './nav/.nav__list.css';
+@import './nav/nav__list.css';
+@import './nav/__navlist.css';
+@import './nav/anchor__navlist.css';
+</style>
+.header__page {
+  align-items: center;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

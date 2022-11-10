@@ -1,0 +1,8 @@
+
+.li__navlist {
+  list-style: none;
+}
+
+.li__navlist:last-child .menu-link{
+  margin-right: 0;
+}
